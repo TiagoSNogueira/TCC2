@@ -1,5 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://basgjhsppbohu"]
+[gd_scene load_steps=3 format=3 uid="uid://basgjhsppbohu"]
 
+[ext_resource type="Script" uid="uid://bhp7t748tqf8s" path="res://node_2d.gd" id="1_0e48y"]
 [ext_resource type="Texture2D" uid="uid://cjhj7b74s76we" path="res://imagens/black-background.jpg" id="1_wtcfe"]
 
 [node name="Node2D" type="Control"]
@@ -9,6 +10,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_0e48y")
 
 [node name="Background" type="Sprite2D" parent="."]
 position = Vector2(576.5, 325)
