@@ -9,7 +9,7 @@ func _on_jogo1_pressed():
 	_abrir_jogo("res://jogos/jogo1/Fazenda.exe")
 
 func _on_jogo2_pressed():
-	_abrir_jogo("res://jogos/jogo2/jogo2.exe")
+	_abrir_jogo("res://jogos/jogo2/Explorador Aprendiz.exe")
 
 func _on_jogo3_pressed():
 	_abrir_jogo("res://jogos/jogo3/jogo3.exe")
