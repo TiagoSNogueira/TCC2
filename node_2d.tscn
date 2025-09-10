@@ -1,9 +1,25 @@
-[gd_scene load_steps=5 format=3 uid="uid://basgjhsppbohu"]
+[gd_scene load_steps=9 format=3 uid="uid://basgjhsppbohu"]
 
 [ext_resource type="Script" uid="uid://bhp7t748tqf8s" path="res://node_2d.gd" id="1_0e48y"]
-[ext_resource type="Texture2D" uid="uid://bdfarba5xjl78" path="res://imagens/silve-background.webp" id="2_0e48y"]
+[ext_resource type="Texture2D" uid="uid://by1f6xsl7mesa" path="res://imagens/Fundo.png" id="2_0hol4"]
 [ext_resource type="Texture2D" uid="uid://7c73wg7i2thj" path="res://imagens/Tela dos jogos.png" id="3_epypp"]
 [ext_resource type="Texture2D" uid="uid://dthcc04xdc2hq" path="res://imagens/Unity.jpeg" id="4_0hol4"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0hol4"]
+radius = 83.0
+height = 220.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_q6r6c"]
+radius = 84.0
+height = 216.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kdubu"]
+radius = 74.0
+height = 208.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_d21ai"]
+radius = 94.0
+height = 244.0
 
 [node name="Node2D" type="Control"]
 layout_mode = 3
@@ -12,33 +28,41 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 script = ExtResource("1_0e48y")
 
 [node name="Background" type="Sprite2D" parent="."]
-position = Vector2(576.5, 325)
-scale = Vector2(1.8748, 1.87826)
-texture = ExtResource("2_0e48y")
+position = Vector2(578, 322.5)
+scale = Vector2(0.751302, 0.631836)
+texture = ExtResource("2_0hol4")
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -27.5
-offset_top = -66.5
-offset_right = 27.5
-offset_bottom = 66.5
+anchors_preset = -1
+anchor_left = -0.74
+anchor_top = -0.994
+anchor_right = 1.744
+anchor_bottom = 1.975
+offset_left = 282.48
+offset_top = 253.112
+offset_right = 282.912
+offset_bottom = 253.2
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+visible = false
 layout_mode = 2
+mouse_filter = 2
 theme_override_constants/separation = 30
 
 [node name="jogo1" type="TextureButton" parent="CenterContainer/VBoxContainer"]
+visible = false
 custom_minimum_size = Vector2(200, 100)
 layout_mode = 2
 size_flags_vertical = 3
+mouse_filter = 2
 texture_normal = ExtResource("3_epypp")
 texture_pressed = ExtResource("3_epypp")
 texture_hover = ExtResource("3_epypp")
@@ -46,6 +70,7 @@ ignore_texture_size = true
 stretch_mode = 5
 
 [node name="Label" type="Label" parent="CenterContainer/VBoxContainer/jogo1"]
+visible = false
 layout_mode = 0
 offset_left = 64.5
 offset_top = -25.5
@@ -54,9 +79,11 @@ offset_bottom = -2.5
 text = "Fazenda"
 
 [node name="jogo2" type="TextureButton" parent="CenterContainer/VBoxContainer"]
+visible = false
 custom_minimum_size = Vector2(200, 100)
 layout_mode = 2
 size_flags_vertical = 3
+mouse_filter = 2
 texture_normal = ExtResource("4_0hol4")
 texture_pressed = ExtResource("4_0hol4")
 texture_hover = ExtResource("4_0hol4")
@@ -64,6 +91,8 @@ ignore_texture_size = true
 stretch_mode = 5
 
 [node name="Label" type="Label" parent="CenterContainer/VBoxContainer/jogo2"]
+visible = false
+layout_mode = 0
 offset_left = 64.5
 offset_top = -25.5
 offset_right = 129.5
@@ -71,6 +100,32 @@ offset_bottom = -2.5
 text = "Unity"
 
 [node name="jogo3" type="Button" parent="CenterContainer/VBoxContainer"]
+visible = false
 layout_mode = 2
 size_flags_vertical = 3
+mouse_filter = 2
 text = "jogo3"
+
+[node name="Portal1" type="Area2D" parent="."]
+position = Vector2(198, 307)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Portal1"]
+shape = SubResource("CapsuleShape2D_0hol4")
+
+[node name="Portal2" type="Area2D" parent="."]
+position = Vector2(430, 284)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Portal2"]
+shape = SubResource("CapsuleShape2D_q6r6c")
+
+[node name="Portal3" type="Area2D" parent="."]
+position = Vector2(661, 291)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Portal3"]
+shape = SubResource("CapsuleShape2D_kdubu")
+
+[node name="Portal4" type="Area2D" parent="."]
+position = Vector2(903, 306)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Portal4"]
+shape = SubResource("CapsuleShape2D_d21ai")
