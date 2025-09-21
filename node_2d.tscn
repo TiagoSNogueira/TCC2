@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://basgjhsppbohu"]
+[gd_scene load_steps=10 format=3 uid="uid://basgjhsppbohu"]
 
 [ext_resource type="Script" uid="uid://bhp7t748tqf8s" path="res://node_2d.gd" id="1_0e48y"]
 [ext_resource type="Texture2D" uid="uid://by1f6xsl7mesa" path="res://imagens/Fundo.png" id="2_0hol4"]
@@ -20,6 +20,11 @@ height = 208.0
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_d21ai"]
 radius = 94.0
 height = 244.0
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_0hol4"]
+vertices = PackedVector2Array(797.992, 388.023, 842.094, 388.602, 810.227, 411.109, 755.82, 406.242, 589.938, 420.406, 641.508, 351.641, 653.469, 397.961, 645.32, 503.141, 692.578, 568.578, 435.352, 591.313, 401.398, 471.969, 443.188, 427, 464.453, 427, 433.406, 344.563, 433.578, 344.578, 541.117, 407.313, 249.141, 397.742, 250.883, 395.758, 713.961, 448.227, 708.57, 424.922)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 5, 6, 7), PackedInt32Array(7, 8, 9, 10, 11, 12), PackedInt32Array(12, 13, 14, 15, 7), PackedInt32Array(10, 16, 17, 11), PackedInt32Array(7, 15, 4), PackedInt32Array(18, 7, 6, 19), PackedInt32Array(2, 18, 19, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(428, 602, 393, 479, 233, 401, 247, 385, 444, 417, 450, 417, 418, 332, 437, 335, 545, 398, 586, 409, 646, 329, 662, 391, 709, 414, 752, 397, 796, 378, 873, 379, 815, 420, 719, 457, 659, 505, 711, 577)])
 
 [node name="Node2D" type="Control"]
 layout_mode = 3
@@ -129,3 +134,6 @@ position = Vector2(903, 306)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Portal4"]
 shape = SubResource("CapsuleShape2D_d21ai")
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+navigation_polygon = SubResource("NavigationPolygon_0hol4")
